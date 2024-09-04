@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dptayn7mds53b"]
+
+[ext_resource type="Script" path="res://name.gd" id="1_50nff"]
+[ext_resource type="Theme" uid="uid://dvogokap6qe1c" path="res://LargeFont.tres" id="2_51pqa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n1mxp"]
+font_size = 200
+
+[node name="Name" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50nff")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 165.0
+offset_right = 884.0
+offset_bottom = 410.0
+label_settings = SubResource("LabelSettings_n1mxp")
+
+[node name="Show" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 539.0
+offset_right = 231.0
+offset_bottom = 643.0
+theme = ExtResource("2_51pqa")
+text = "SHOW"
+
+[node name="EXIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 988.0
+offset_top = 6.0
+offset_right = 1140.0
+offset_bottom = 110.0
+theme = ExtResource("2_51pqa")
+text = "EXIT"
+
+[node name="CLEAR" type="Button" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 540.0
+offset_right = 458.0
+offset_bottom = 644.0
+theme = ExtResource("2_51pqa")
+text = "CLEAR"
+
+[connection signal="pressed" from="Show" to="." method="_on_show_pressed"]
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CLEAR" to="." method="_on_clear_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://txsj58mjegkf"]
+
+[ext_resource type="Script" path="res://hello.gd" id="1_15w6o"]
+[ext_resource type="Theme" uid="uid://dvogokap6qe1c" path="res://LargeFont.tres" id="2_h5gvb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sl3sj"]
+font_size = 100
+
+[node name="Hello" type="Control"]
+layout_mode = 3
+anchor_left = 0.097
+anchor_top = 0.124
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.744
+offset_top = -6.35201
+offset_right = 27.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15w6o")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 77.0
+offset_right = 655.0
+offset_bottom = 214.0
+text = "Hello"
+label_settings = SubResource("LabelSettings_sl3sj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show" type="Button" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 273.0
+offset_right = 494.0
+offset_bottom = 461.0
+theme = ExtResource("2_h5gvb")
+text = "SHOW"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 272.0
+offset_right = 932.0
+offset_bottom = 460.0
+theme = ExtResource("2_h5gvb")
+text = "CLEAR"
+
+[connection signal="pressed" from="Show" to="." method="_on_show_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]

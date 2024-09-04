@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6dasf7dva0k1"]
+
+[ext_resource type="Script" path="res://fav_club.gd" id="1_bfw8n"]
+[ext_resource type="Theme" uid="uid://dvogokap6qe1c" path="res://LargeFont.tres" id="2_rsp7b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_56att"]
+font_size = 100
+
+[node name="FavClub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 3.0
+offset_right = -4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bfw8n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 130.0
+offset_right = 573.0
+offset_bottom = 199.0
+label_settings = SubResource("LabelSettings_56att")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 303.0
+offset_right = 463.0
+offset_bottom = 452.0
+theme = ExtResource("2_rsp7b")
+text = "Show"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 479.0
+offset_right = 769.0
+offset_bottom = 628.0
+theme = ExtResource("2_rsp7b")
+text = "Exit"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 303.0
+offset_right = 1058.0
+offset_bottom = 452.0
+theme = ExtResource("2_rsp7b")
+text = "Clear"
+
+[connection signal="pressed" from="Show" to="." method="_on_show_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
