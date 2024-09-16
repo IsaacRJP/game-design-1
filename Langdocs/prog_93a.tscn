@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://65w0e2uofknb"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_93a.gd" id="1_0pt82"]
+[ext_resource type="Theme" uid="uid://c78csml3a1r6k" path="res://Langdocs/new_theme.tres" id="2_ygg44"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kipqc"]
+font_size = 50
+
+[node name="prog93a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0pt82")
+
+[node name="lblKw" type="Label" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 109.0
+offset_right = 423.0
+offset_bottom = 178.0
+text = "Kilowatts Used:"
+label_settings = SubResource("LabelSettings_kipqc")
+
+[node name="txtKw" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 110.0
+offset_right = 831.0
+offset_bottom = 173.0
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 9.0
+offset_right = 1142.0
+offset_bottom = 84.0
+theme = ExtResource("2_ygg44")
+text = "EXIT"
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 103.0
+offset_right = 1141.0
+offset_bottom = 178.0
+theme = ExtResource("2_ygg44")
+text = "CALCULATE"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 12.0
+offset_right = 1031.0
+offset_bottom = 87.0
+theme = ExtResource("2_ygg44")
+text = "CLEAR"
+
+[node name="lblReciept" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 201.0
+offset_right = 1148.0
+offset_bottom = 641.0
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]

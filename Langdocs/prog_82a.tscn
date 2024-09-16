@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg4ded44honlb"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_82a.gd" id="1_mn6sg"]
+[ext_resource type="Theme" uid="uid://dvogokap6qe1c" path="res://LargeFont.tres" id="2_6tg4i"]
+
+[node name="prog82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mn6sg")
+
+[node name="lblLimit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 50.0
+offset_right = 474.0
+offset_bottom = 154.0
+theme = ExtResource("2_6tg4i")
+text = "Speed Limit:
+"
+horizontal_alignment = 2
+
+[node name="lblSpeed" type="Label" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 187.0
+offset_right = 544.0
+offset_bottom = 291.0
+theme = ExtResource("2_6tg4i")
+text = "Vehicle Speed:
+"
+horizontal_alignment = 2
+
+[node name="lblFine" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 309.0
+offset_right = 220.0
+offset_bottom = 504.0
+theme = ExtResource("2_6tg4i")
+text = "Fine:
+
+"
+horizontal_alignment = 2
+
+[node name="OutMoney" type="Label" parent="."]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 311.0
+offset_right = 636.0
+offset_bottom = 415.0
+theme = ExtResource("2_6tg4i")
+text = "$"
+
+[node name="txtLimit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 51.0
+offset_right = 1105.0
+offset_bottom = 130.0
+
+[node name="txtSpeed" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 573.0
+offset_top = 194.0
+offset_right = 1103.0
+offset_bottom = 279.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 523.0
+offset_right = 367.0
+offset_bottom = 627.0
+theme = ExtResource("2_6tg4i")
+text = "Calculate
+"
+
+[node name="btnClr" type="Button" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 524.0
+offset_right = 573.0
+offset_bottom = 628.0
+theme = ExtResource("2_6tg4i")
+text = "Clear"
+
+[node name="btnExt" type="Button" parent="."]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 538.0
+offset_right = 1137.0
+offset_bottom = 642.0
+theme = ExtResource("2_6tg4i")
+text = "Exit
+"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClr" to="." method="_on_btn_clr_pressed"]
+[connection signal="pressed" from="btnExt" to="." method="_on_btn_ext_pressed"]

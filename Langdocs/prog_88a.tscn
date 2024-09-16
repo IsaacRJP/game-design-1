@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://soasvk2jxcwj"]
+
+[ext_resource type="Script" path="res://prog_88a.gd" id="1_sd547"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bykls"]
+font_size = 42
+font_color = Color(0.870016, 0.455553, 0.326689, 1)
+
+[node name="Prog88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd547")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 101.0
+offset_right = 1150.0
+offset_bottom = 561.0
+label_settings = SubResource("LabelSettings_bykls")
+
+[node name="Nmb1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 433.0
+offset_bottom = 95.0
+placeholder_text = "0"
+
+[node name="Nmb2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 14.0
+offset_right = 1133.0
+offset_bottom = 93.0
+placeholder_text = "0"
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 572.0
+offset_right = 237.0
+offset_bottom = 634.0
+text = "Calculate
+"
+
+[node name="btnClr" type="Button" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 575.0
+offset_right = 502.0
+offset_bottom = 637.0
+text = "Clear"
+
+[node name="btnExt" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 571.0
+offset_right = 1131.0
+offset_bottom = 633.0
+text = "EXIT"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClr" to="." method="_on_btn_clr_pressed"]
+[connection signal="pressed" from="btnExt" to="." method="_on_btn_ext_pressed"]

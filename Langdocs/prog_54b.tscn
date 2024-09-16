@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckp4hyeexawum"]
+
+[ext_resource type="Script" path="res://prog_54b.gd" id="1_wvnid"]
+[ext_resource type="Theme" uid="uid://dvogokap6qe1c" path="res://LargeFont.tres" id="2_qsg28"]
+[ext_resource type="Script" path="res://lbl_avg.gd" id="3_4mtr2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dh0fh"]
+font_size = 50
+
+[node name="prog54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wvnid")
+
+[node name="Nmb1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 204.0
+offset_right = 391.0
+offset_bottom = 302.0
+
+[node name="Nmb2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 316.0
+offset_right = 389.0
+offset_bottom = 414.0
+
+[node name="Nmb3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 428.0
+offset_right = 391.0
+offset_bottom = 526.0
+
+[node name="Nmb4" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 540.0
+offset_right = 387.0
+offset_bottom = 638.0
+
+[node name="Enter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.035
+offset_left = 38.0
+offset_top = 72.0
+offset_right = 610.416
+offset_bottom = 145.32
+theme = ExtResource("2_qsg28")
+text = "Enter 4 Numbers:"
+
+[node name="lblSum" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.085
+anchor_bottom = 0.077
+offset_left = 468.0
+offset_top = 208.0
+offset_right = 848.08
+offset_bottom = 227.104
+text = "Sum: "
+label_settings = SubResource("LabelSettings_dh0fh")
+
+[node name="lblAvg" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.085
+anchor_bottom = 0.077
+offset_left = 464.0
+offset_top = 336.0
+offset_right = 844.08
+offset_bottom = 355.104
+text = "Average: "
+label_settings = SubResource("LabelSettings_dh0fh")
+script = ExtResource("3_4mtr2")
+
+[node name="btnCalculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 578.0
+offset_right = 1004.0
+offset_bottom = 640.0
+text = "CALCULATE"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 120.0
+theme = ExtResource("2_qsg28")
+text = "X"
+
+[connection signal="pressed" from="btnCalculate" to="." method="_on_btn_calculate_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
