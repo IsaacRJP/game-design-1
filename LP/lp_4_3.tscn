@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhhq2ih7nkv4x"]
+
+[ext_resource type="Script" path="res://lp_4_3.gd" id="1_dq6d8"]
+[ext_resource type="Theme" uid="uid://c78csml3a1r6k" path="res://Langdocs/new_theme.tres" id="2_m0pb0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxont"]
+font_size = 30
+
+[node name="LP 4-3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dq6d8")
+
+[node name="lblEgg" type="Label" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 12.0
+offset_right = 734.0
+offset_bottom = 89.0
+theme = ExtResource("2_m0pb0")
+text = "Number of Eggs:"
+
+[node name="txtEggs" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 86.0
+offset_right = 868.0
+offset_bottom = 171.0
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 197.0
+offset_right = 1130.0
+offset_bottom = 541.0
+
+[node name="lblBill" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 101.0
+offset_right = 231.0
+offset_bottom = 176.0
+text = "Bill:"
+label_settings = SubResource("LabelSettings_bxont")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 559.0
+offset_right = 531.0
+offset_bottom = 634.0
+theme = ExtResource("2_m0pb0")
+text = "CALCULATE"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 559.0
+offset_right = 1079.0
+offset_bottom = 634.0
+theme = ExtResource("2_m0pb0")
+text = "CLEAR"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 14.0
+offset_right = 1137.0
+offset_bottom = 105.0
+theme = ExtResource("2_m0pb0")
+text = "EXIT"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
