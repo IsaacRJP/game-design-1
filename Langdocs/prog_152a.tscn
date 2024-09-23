@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0mpi0i37o64"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_152a.gd" id="1_6ipm3"]
+[ext_resource type="Theme" uid="uid://d2vosag2ged8x" path="res://Langdocs/22.tres" id="1_8d5jw"]
+
+[node name="prog152a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ipm3")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 498.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 525.0
+offset_right = 371.0
+offset_bottom = 628.0
+theme = ExtResource("1_8d5jw")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 527.0
+offset_right = 755.0
+offset_bottom = 630.0
+theme = ExtResource("1_8d5jw")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 527.0
+offset_right = 1135.0
+offset_bottom = 630.0
+rotation = -0.00465709
+theme = ExtResource("1_8d5jw")
+text = "EXIT"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
