@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c02fb8phpfsj5"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_115b.gd" id="1_1ujya"]
+
+[node name="prog115b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ujya")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 521.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 537.0
+offset_right = 443.0
+offset_bottom = 617.0
+text = "CALCULATE"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 534.0
+offset_right = 854.0
+offset_bottom = 614.0
+text = "CLEAR"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 543.0
+offset_right = 1135.0
+offset_bottom = 623.0
+rotation = 0.00473071
+text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

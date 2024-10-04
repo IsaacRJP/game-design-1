@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbnr3upce0ww3"]
+[gd_scene load_steps=8 format=3 uid="uid://cbnr3upce0ww3"]
 
 [ext_resource type="Script" path="res://pit_world_1.gd" id="1_456fg"]
 [ext_resource type="PackedScene" uid="uid://ceqvuedhjykww" path="res://plt_player.tscn" id="2_4xflm"]
+[ext_resource type="PackedScene" uid="uid://dus244cmmx2a2" path="res://plt_enemy.tscn" id="3_10atw"]
+[ext_resource type="PackedScene" uid="uid://jc4xbsryfmvt" path="res://interact.tscn" id="3_ck4kl"]
+[ext_resource type="PackedScene" uid="uid://coka1k1vnlvtr" path="res://draggable.tscn" id="4_022xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fd0l"]
 size = Vector2(73, 8)
@@ -18,11 +21,27 @@ position = Vector2(2, 339)
 position = Vector2(-24, -54)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
-position = Vector2(-47, -108)
-polygon = PackedVector2Array(-7, 185, 30, 601, 109, 556, 203, 527, 243, 456, 319, 433, 368, 376, 435, 341, 449, 406, 433, 517, 510, 509, 573, 427, 623, 395, 643, 319, 679, 371, 710, 364, 734, 271, 821, 224, 790, 287, 790, 339, 830, 422, 877, 471, 919, 501, 983, 511, 1021, 513, 1070, 503, 1111, 484, 1153, 462, 1175, 443, 1211, 431, 1242, 430, 1319, 436, 1594, 293, 1749, 432, 1885, 697, 1987, 738, 2108, 810, 2213, 727, 2263, 713, 2341, 639, 2443, 720, 2724, 520, 2963, 442, 2905, 733, 2952, 865, 3185, 921, 3568, 586, 3964, 736, 4168, 771, 4370, 916, 4695, 904, 4815, 1022, 4971, 972, 5169, 1018, 5430, 888, 5649, 850, 5848, 900, 5931, 379, 5886, 1092, 16, 1125)
+position = Vector2(-62, 127)
+scale = Vector2(1.09301, 0.5904)
+polygon = PackedVector2Array(-7, 185, 30, 601, 109, 556, 203, 527, 243, 456, 319, 433, 368, 376, 435, 341, 449, 406, 433, 517, 510, 509, 573, 427, 623, 395, 643, 319, 679, 371, 710, 364, 734, 271, 821, 224, 790, 287, 790, 339, 830, 422, 877, 471, 919, 501, 983, 511, 1021, 513, 1070, 503, 1111, 484, 1153, 462, 1175, 443, 1211, 431, 1242, 430, 1319, 436, 1594, 293, 1749, 432, 1885, 697, 1987, 738, 2108, 810, 2213, 727, 2263, 713, 2341, 639, 2443, 720, 2724, 520, 2963, 442, 2905, 733, 2952, 865, 3185, 921, 3568, 586, 3964, 736, 4168, 771, 4370, 916, 4695, 904, 4815, 1022, 4971, 972, 5209, 571, 5169, 1018, 5430, 888, 5649, 850, 5848, 900, 6011, 506, 6098, 898, 6570, 294, 6532, 1015, 7241, 828, 7856.51, -663.873, 8107, 1082, 8480, 1116, 8911.73, 381.112, 9237.28, -162.658, 9309.54, -1071.25, 14128.1, -900.296, 15076.2, -3021.48, 15851.3, -764.116, 17794.3, -5484.05, 20371.2, -5825.44, 15541.5, -26423.5, 22407.6, -2374.63, 17686.7, 1976.49, 11245.1, 2667.79, 9315.84, 2807.75, 3929.53, 2574.16, 16, 1125)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 color = Color(0.635424, 0.184768, 0.41895, 1)
+
+[node name="plt_enemy" parent="World" instance=ExtResource("3_10atw")]
+position = Vector2(14525, -587)
+
+[node name="plt_enemy2" parent="World" instance=ExtResource("3_10atw")]
+position = Vector2(14657, -590)
+
+[node name="plt_enemy3" parent="World" instance=ExtResource("3_10atw")]
+position = Vector2(14804, -590)
+
+[node name="plt_enemy4" parent="World" instance=ExtResource("3_10atw")]
+position = Vector2(8815, 467)
+
+[node name="plt_enemy5" parent="World" instance=ExtResource("3_10atw")]
+position = Vector2(6017, 384)
 
 [node name="startplatform" type="StaticBody2D" parent="."]
 position = Vector2(-4, 362)
@@ -35,3 +54,9 @@ shape = SubResource("RectangleShape2D_3fd0l")
 position = Vector2(0.999998, 1.52588e-05)
 scale = Vector2(73, 7.99997)
 texture = SubResource("PlaceholderTexture2D_bk54h")
+
+[node name="interact" parent="." instance=ExtResource("3_ck4kl")]
+position = Vector2(1053, -392)
+
+[node name="draggable" parent="." instance=ExtResource("4_022xq")]
+position = Vector2(100, 351)
