@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	self.linear_velocity.x = speed * direction
-
+	
 func _on_timer_timeout() -> void:
 	direction *= -1
 
@@ -17,3 +17,12 @@ func _on_body_entered(body: Node) -> void:
 		body.queue_free()
 		OS.alert("You died :(")
 		get_tree().reload_current_scene()
+
+@onready var anim = $AnimatedSprite2D
+
+
+
+func update_animation(direction):
+	if direction != 0:
+		anim.play("default")
+		anim.flip_h = direction < 0
