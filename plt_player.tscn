@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ceqvuedhjykww"]
+[gd_scene load_steps=17 format=3 uid="uid://ceqvuedhjykww"]
 
 [ext_resource type="Script" path="res://plt_player.gd" id="1_8l86s"]
 [ext_resource type="Texture2D" uid="uid://5vdtsae2nuyh" path="res://icon.svg" id="2_ibemp"]
+[ext_resource type="PackedScene" uid="uid://nr07shrx34f5" path="res://pause_menu.tscn" id="3_3ownb"]
 [ext_resource type="Texture2D" uid="uid://c86gjl6e5uyvq" path="res://Assets/Sprites/characters.png" id="3_r8bdy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vi0we"]
@@ -94,7 +95,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="plt_player" type="CharacterBody2D"]
+[node name="plt_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_8l86s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -108,6 +109,9 @@ shape = SubResource("CapsuleShape2D_vi0we")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.25, 3.25)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("3_3ownb")]
+z_index = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
