@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://de8qy8fy1qy2b"]
+
+[ext_resource type="Script" path="res://phys_demo.gd" id="1_3igkn"]
+[ext_resource type="PackedScene" uid="uid://c1cn8f0qfqyke" path="res://phys_ball.tscn" id="1_qljfb"]
+[ext_resource type="Theme" uid="uid://d2vosag2ged8x" path="res://Langdocs/22.tres" id="3_v1toj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np3bk"]
+size = Vector2(1182, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sp2u5"]
+
+[node name="phys_demo" type="Node2D"]
+script = ExtResource("1_3igkn")
+
+[node name="phys_ball" parent="." instance=ExtResource("1_qljfb")]
+position = Vector2(612, 233)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(579, 624)
+shape = SubResource("RectangleShape2D_np3bk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(-4, 3)
+scale = Vector2(1183, 19.5)
+texture = SubResource("PlaceholderTexture2D_sp2u5")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 470.0
+offset_bottom = 194.0
+
+[node name="GravLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 120.0
+offset_bottom = 54.0
+theme = ExtResource("3_v1toj")
+text = "Gravity"
+
+[node name="InertiaLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 50.0
+offset_right = 121.0
+offset_bottom = 92.0
+theme = ExtResource("3_v1toj")
+text = "Inertia:"
+
+[node name="VelocityLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 132.0
+theme = ExtResource("3_v1toj")
+text = "Velocity:"
+
+[node name="GravSlider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 12.0
+offset_right = 417.0
+offset_bottom = 57.0
+max_value = 20.0
+
+[node name="btnApply" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 136.0
+offset_right = 450.0
+offset_bottom = 179.0
+text = "APPLY FORCE"
+
+[node name="btnApply2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 135.0
+offset_right = 303.0
+offset_bottom = 178.0
+text = "APPLY ADJUSTMENTS"
+
+[node name="txtInertia" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 59.0
+offset_right = 446.0
+offset_bottom = 90.0
+
+[node name="txtVelX" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 95.0
+offset_right = 282.0
+offset_bottom = 126.0
+
+[node name="txtVelY" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 95.0
+offset_right = 451.0
+offset_bottom = 126.0
+
+[connection signal="value_changed" from="Panel/GravSlider" to="." method="_on_grav_slider_value_changed"]
+[connection signal="pressed" from="Panel/btnApply" to="." method="_on_btn_apply_pressed"]
+[connection signal="pressed" from="Panel/btnApply2" to="." method="_on_btn_apply_2_pressed"]
