@@ -12,7 +12,10 @@ func _input(event: InputEvent) -> void:
 		nball.gravity_scale = $Panel/GravSlider.value
 		nball.inertia = float($Panel/txtInertia.text)
 		nball.linear_velocity = Vector2(float($Panel/txtVelX.text), float($Panel/txtVelY.text))
+		
 		add_child(nball)
+func _physics_process(delta: float) -> void:
+	pass
 
 
 func _on_grav_slider_value_changed(value: float) -> void:
