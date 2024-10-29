@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://cphmdbhpxs8kl"]
+
+[ext_resource type="Script" path="res://high_scores.gd" id="1_cme8j"]
+
+[node name="HighScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cme8j")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 468.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 485.0
+offset_right = 338.0
+offset_bottom = 554.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 489.0
+offset_right = 1137.0
+offset_bottom = 558.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 570.0
+offset_right = 358.0
+offset_bottom = 637.0
+text = "ADD SCORE"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 799.0
+offset_top = 566.0
+offset_right = 1140.0
+offset_bottom = 633.0
+text = "REMOVE SCORE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
