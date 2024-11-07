@@ -16,8 +16,8 @@ func _input(event: InputEvent) -> void:
 		add_child(nball)
 		
 func _physics_process(delta: float) -> void:
-		var accel = phys_ball.linear_velocity/delta
-		phys_ball.linear_velocity = accel * delta
+	var accel = phys_ball.linear_velocity/delta
+	phys_ball.linear_velocity = accel * delta
 
 
 func _on_grav_slider_value_changed(value: float) -> void:
