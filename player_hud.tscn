@@ -29,8 +29,8 @@ offset_right = 404.0
 offset_bottom = 644.0
 
 [node name="Icon" type="Sprite2D" parent="Money"]
-position = Vector2(7, 125.5)
-scale = Vector2(1.375, 1.4375)
+position = Vector2(17, 122)
+scale = Vector2(2.625, 2.78125)
 texture = ExtResource("2_jn66y")
 hframes = 33
 vframes = 20
@@ -38,8 +38,9 @@ frame = 132
 
 [node name="Coins" type="Label" parent="Money"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 113.0
-offset_right = 56.0
-offset_bottom = 136.0
+offset_left = 34.0
+offset_top = 96.0
+offset_right = 74.0
+offset_bottom = 119.0
+scale = Vector2(2, 2)
 text = "000"

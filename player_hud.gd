@@ -17,6 +17,7 @@ func create_heart():
 func draw_hearts():
 	for heart in hearts.get_children():
 		hearts.remove_child(heart)
+	@warning_ignore("integer_division")
 	for i in range(int(player.data.max_health) / 20):
 		create_heart() # 1 heart per 20hp
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var p_health = player.data.health
+	var p_money = player.data.money
 	var full_hearts = floor(p_health / 20)
 	var remainder = int(p_health) % 20
 	
@@ -43,5 +45,7 @@ func _process(delta: float) -> void:
 			heart.frame = 8 - int(remainder / 5) # 1/2, 1/4, and 3/4 Hearts
 		elif index < full_hearts:
 				heart.frame = 4 # full
+				
+		$Money/Coins.text = str(p_money)
 	pass
 		

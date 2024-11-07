@@ -17,16 +17,16 @@ tile_map_data = PackedByteArray("AADy/wkAAAAWAAkAAAD7/wkAAAAWAAkAAADt//j/AAAGAAA
 tile_set = ExtResource("1_qu4w1")
 
 [node name="td_player" parent="." instance=ExtResource("2_54d30")]
-position = Vector2(-89, 34)
+position = Vector2(-259, 1)
 
 [node name="mini_heart" parent="." instance=ExtResource("3_rpvyr")]
-position = Vector2(-279, -27)
+position = Vector2(-260, 150)
 
 [node name="mini_heart2" parent="." instance=ExtResource("3_rpvyr")]
-position = Vector2(-228, -32)
+position = Vector2(-119, 174)
 
 [node name="mini_heart3" parent="." instance=ExtResource("3_rpvyr")]
-position = Vector2(-331, -38)
+position = Vector2(-207, 105)
 
 [node name="coin" parent="." instance=ExtResource("4_heett")]
 position = Vector2(-102, 146)
