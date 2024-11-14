@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://caraequmr8mmw"]
+[gd_scene load_steps=51 format=3 uid="uid://caraequmr8mmw"]
 
 [ext_resource type="Script" path="res://td_player.gd" id="1_htexm"]
 [ext_resource type="Texture2D" uid="uid://hk4isqgys3x2" path="res://Assets/Sprites/gfx/character.png" id="1_v51i6"]
 [ext_resource type="PackedScene" uid="uid://nr07shrx34f5" path="res://pause_menu.tscn" id="3_ip3ds"]
 [ext_resource type="PackedScene" uid="uid://kbc43c73et6i" path="res://player_hud.tscn" id="4_vr8n5"]
+[ext_resource type="AudioStream" uid="uid://bokq23y8aca2r" path="res://Assets/Sounds/explosion.wav" id="5_gk1qr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pn0d"]
 atlas = ExtResource("1_v51i6")
@@ -389,3 +390,6 @@ shape = SubResource("CapsuleShape2D_5fx54")
 
 [node name="PlayerHUD" parent="." instance=ExtResource("4_vr8n5")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gk1qr")
