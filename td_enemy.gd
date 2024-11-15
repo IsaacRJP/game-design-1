@@ -75,7 +75,7 @@ func drop_coin():
 	drop_scene(coin)
 
 func drop_items():
-	var num_drops = randi() % 5 + 1
+	var num_drops = randi() % 3 + 1
 	for i in range(num_drops):
 		var rnd_drop = drops[randi() % drops.size()]
 		call_deferred(rnd_drop)

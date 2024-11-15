@@ -1,22 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://rn8gncs8qgja"]
+[gd_scene load_steps=9 format=3 uid="uid://ycyrwyvws8v6"]
 
-[ext_resource type="Script" path="res://Entities/Items/mini_coin.gd" id="1_5ofx7"]
-[ext_resource type="Texture2D" uid="uid://bxgjuh0plaqaq" path="res://Assets/Sprites/gfx/objects.png" id="2_6xn0f"]
+[ext_resource type="Script" path="res://Entities/Items/mini_coin.gd" id="1_q25wu"]
+[ext_resource type="Texture2D" uid="uid://bxgjuh0plaqaq" path="res://Assets/Sprites/gfx/objects.png" id="2_51436"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmt71"]
-atlas = ExtResource("2_6xn0f")
+atlas = ExtResource("2_51436")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkgnu"]
-atlas = ExtResource("2_6xn0f")
+atlas = ExtResource("2_51436")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ibhf"]
-atlas = ExtResource("2_6xn0f")
+atlas = ExtResource("2_51436")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6477e"]
-atlas = ExtResource("2_6xn0f")
+atlas = ExtResource("2_51436")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yto7p"]
@@ -43,12 +43,12 @@ animations = [{
 radius = 7.0
 
 [node name="mini_coin" type="Node2D"]
-script = ExtResource("1_5ofx7")
+script = ExtResource("1_q25wu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(3.65794e-06, 0.669843, 0.16619, 1)
+modulate = Color(0.619699, 0.227098, 0, 1)
 sprite_frames = SubResource("SpriteFrames_yto7p")
-frame_progress = 0.145859
+frame_progress = 0.616898
 
 [node name="Area2D" type="Area2D" parent="."]
 
