@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=4 uid="uid://dj84io2hcdmj2"]
+[gd_scene load_steps=13 format=4 uid="uid://dj84io2hcdmj2"]
 
 [ext_resource type="Texture2D" uid="uid://dnq8edewffhog" path="res://Assets/Sprites/gfx/cave.png" id="1_5d6k5"]
 [ext_resource type="PackedScene" uid="uid://caraequmr8mmw" path="res://td_player.tscn" id="2_cmh4u"]
 [ext_resource type="PackedScene" uid="uid://bf82m0a00v4oh" path="res://Entities/td_enemy.tscn" id="3_o7002"]
+[ext_resource type="TileSet" uid="uid://phv14gpth1a5" path="res://tilesets/td_world_1.tres" id="4_j7j00"]
+[ext_resource type="PackedScene" uid="uid://c5gb0scorpjsf" path="res://change_lvl.tscn" id="5_gjqqe"]
+[ext_resource type="PackedScene" uid="uid://rn8gncs8qgja" path="res://Entities/Items/coin_silver.tscn" id="6_7rv8o"]
+[ext_resource type="PackedScene" uid="uid://b41ne7vdpplkq" path="res://Entities/Items/coin.tscn" id="7_gf7h5"]
+[ext_resource type="PackedScene" uid="uid://cko2rmivquotr" path="res://Entities/Items/mini_heart.tscn" id="8_1ks8r"]
+[ext_resource type="PackedScene" uid="uid://dt5ryj04nfxtw" path="res://Entities/Items/heart_container.tscn" id="9_0j1bb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw6as"]
 texture = ExtResource("1_5d6k5")
@@ -133,9 +139,12 @@ texture = ExtResource("1_5d6k5")
 9:9/0 = 0
 10:9/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rdm07"]
+
 [sub_resource type="TileSet" id="TileSet_55t2n"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gw6as")
+sources/1 = SubResource("TileSetScenesCollectionSource_rdm07")
 
 [node name="td_world_2" type="Node2D"]
 
@@ -151,3 +160,51 @@ position = Vector2(367, 128)
 
 [node name="td_enemy2" parent="." instance=ExtResource("3_o7002")]
 position = Vector2(364, 79)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAQAP7/AAAUAAQAAAAQAP//AAAUAAUAAAARAP7/AAAUAAQAAAARAP//AAAUAAUAAAA=")
+tile_set = ExtResource("4_j7j00")
+
+[node name="change_lvl" parent="." instance=ExtResource("5_gjqqe")]
+position = Vector2(272, -43)
+next_level = "td_world_3"
+
+[node name="CollisionShape2D" parent="change_lvl" index="0"]
+position = Vector2(-1, 5)
+
+[node name="Sprite2D" parent="change_lvl" index="1"]
+visible = false
+position = Vector2(-431, 406)
+scale = Vector2(32, 34)
+
+[node name="mini_coin" parent="." instance=ExtResource("6_7rv8o")]
+position = Vector2(360, 105)
+
+[node name="mini_coin2" parent="." instance=ExtResource("6_7rv8o")]
+position = Vector2(360, 51)
+
+[node name="mini_coin3" parent="." instance=ExtResource("6_7rv8o")]
+position = Vector2(356, 152)
+
+[node name="coin" parent="." instance=ExtResource("7_gf7h5")]
+position = Vector2(325, 50)
+
+[node name="coin2" parent="." instance=ExtResource("7_gf7h5")]
+position = Vector2(360, 24)
+
+[node name="coin3" parent="." instance=ExtResource("7_gf7h5")]
+position = Vector2(316, 17)
+
+[node name="mini_heart" parent="." instance=ExtResource("8_1ks8r")]
+position = Vector2(248, 148)
+
+[node name="mini_heart2" parent="." instance=ExtResource("8_1ks8r")]
+position = Vector2(235, 148)
+
+[node name="mini_heart3" parent="." instance=ExtResource("8_1ks8r")]
+position = Vector2(241, 157)
+
+[node name="heart_container" parent="." instance=ExtResource("9_0j1bb")]
+position = Vector2(247, 113)
+
+[editable path="change_lvl"]

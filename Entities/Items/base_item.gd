@@ -11,6 +11,7 @@ func remove():
 	value = 0
 	queue_free()
 
+@warning_ignore("unused_parameter")
 func interact(player):
 	""" TODO: to be implemented by child class """
 	# player.pickup_item(value)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt5ryj04nfxtw"]
+
+[ext_resource type="Script" path="res://heart_container.gd" id="1_nlr32"]
+[ext_resource type="Texture2D" uid="uid://bxgjuh0plaqaq" path="res://Assets/Sprites/gfx/objects.png" id="2_3bx6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rfh0"]
+size = Vector2(13, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uovdu"]
+atlas = ExtResource("2_3bx6i")
+region = Rect2(144, 0, 32, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbqti"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uovdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="heart_container" type="Node2D"]
+script = ExtResource("1_nlr32")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_1rfh0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0.756863, 1)
+position = Vector2(1, 2)
+scale = Vector2(0.640625, 0.675)
+sprite_frames = SubResource("SpriteFrames_xbqti")

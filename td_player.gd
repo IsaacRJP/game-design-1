@@ -81,6 +81,11 @@ func  pickup_health(value):
 func pickup_money(value):
 	data.money += value
 
+func pickup_heartcontainer():
+	data.health += 20
+	data.max_health += 20
+	data.health = clamp(data.health, 0, data.max_health)
+
 signal health_depleted
 
 func take_damage(dmg):
@@ -142,6 +147,12 @@ func _physics_process(delta: float) -> void:
 			charged_attack()
 		else:
 			data.state = STATES.IDLE
+	if Input.is_action_just_pressed("ui_select"):
+		for entity in get_tree().get_nodes_in_group("Interactable"):
+			if entity.in_range(self):
+				entity.interact(self)
+				data.state = STATES.IDLE
+				return
 	if Input.is_action_just_pressed("ui_cancel"):
 			$Camera2D/pause_menu.show()
 			get_tree().paused = true

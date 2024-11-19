@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b5jgmntfmctkd"]
+[gd_scene load_steps=10 format=4 uid="uid://b5jgmntfmctkd"]
 
 [ext_resource type="TileSet" uid="uid://phv14gpth1a5" path="res://tilesets/td_world_1.tres" id="1_qu4w1"]
 [ext_resource type="PackedScene" uid="uid://caraequmr8mmw" path="res://td_player.tscn" id="2_54d30"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bf82m0a00v4oh" path="res://Entities/td_enemy.tscn" id="5_2gvql"]
 [ext_resource type="AudioStream" uid="uid://bg8g83qgim5gy" path="res://Assets/Sounds/overworld.mp3" id="6_cotlk"]
 [ext_resource type="PackedScene" uid="uid://c5gb0scorpjsf" path="res://change_lvl.tscn" id="7_jfc03"]
+[ext_resource type="PackedScene" uid="uid://dt5ryj04nfxtw" path="res://Entities/Items/heart_container.tscn" id="8_mb4gy"]
 [ext_resource type="PackedScene" uid="uid://ycyrwyvws8v6" path="res://Entities/Items/mini_coin.tscn" id="8_wi521"]
 
 [node name="td_world1" type="Node2D"]
@@ -99,7 +100,7 @@ position = Vector2(-231, -557)
 next_level = "td_world_2"
 
 [node name="CollisionShape2D" parent="change_lvl" index="0"]
-position = Vector2(-33.5, 487)
+position = Vector2(-32, 464)
 
 [node name="Sprite2D" parent="change_lvl" index="1"]
 visible = false
@@ -122,5 +123,11 @@ position = Vector2(-63, -34)
 
 [node name="mini_coin3" parent="." instance=ExtResource("8_wi521")]
 position = Vector2(-40, 2)
+
+[node name="heart_container" parent="." instance=ExtResource("8_mb4gy")]
+position = Vector2(-61, 22)
+
+[node name="heart_container2" parent="." instance=ExtResource("8_mb4gy")]
+position = Vector2(-66, -3)
 
 [editable path="change_lvl"]
