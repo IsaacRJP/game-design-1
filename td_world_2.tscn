@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dj84io2hcdmj2"]
+[gd_scene load_steps=14 format=4 uid="uid://dj84io2hcdmj2"]
 
 [ext_resource type="Texture2D" uid="uid://dnq8edewffhog" path="res://Assets/Sprites/gfx/cave.png" id="1_5d6k5"]
 [ext_resource type="PackedScene" uid="uid://caraequmr8mmw" path="res://td_player.tscn" id="2_cmh4u"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b41ne7vdpplkq" path="res://Entities/Items/coin.tscn" id="7_gf7h5"]
 [ext_resource type="PackedScene" uid="uid://cko2rmivquotr" path="res://Entities/Items/mini_heart.tscn" id="8_1ks8r"]
 [ext_resource type="PackedScene" uid="uid://dt5ryj04nfxtw" path="res://Entities/Items/heart_container.tscn" id="9_0j1bb"]
+[ext_resource type="PackedScene" uid="uid://b1qdmndsv06xv" path="res://Entities/Items/Small_chest.tscn" id="10_eh70q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw6as"]
 texture = ExtResource("1_5d6k5")
@@ -206,5 +207,8 @@ position = Vector2(241, 157)
 
 [node name="heart_container" parent="." instance=ExtResource("9_0j1bb")]
 position = Vector2(247, 113)
+
+[node name="SmallChest" parent="." instance=ExtResource("10_eh70q")]
+position = Vector2(184, 19)
 
 [editable path="change_lvl"]
