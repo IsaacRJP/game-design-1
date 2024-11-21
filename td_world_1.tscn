@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b5jgmntfmctkd"]
+[gd_scene load_steps=11 format=4 uid="uid://b5jgmntfmctkd"]
 
 [ext_resource type="TileSet" uid="uid://phv14gpth1a5" path="res://tilesets/td_world_1.tres" id="1_qu4w1"]
 [ext_resource type="PackedScene" uid="uid://caraequmr8mmw" path="res://td_player.tscn" id="2_54d30"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5gb0scorpjsf" path="res://change_lvl.tscn" id="7_jfc03"]
 [ext_resource type="PackedScene" uid="uid://dt5ryj04nfxtw" path="res://Entities/Items/heart_container.tscn" id="8_mb4gy"]
 [ext_resource type="PackedScene" uid="uid://ycyrwyvws8v6" path="res://Entities/Items/mini_coin.tscn" id="8_wi521"]
+[ext_resource type="PackedScene" uid="uid://b1qdmndsv06xv" path="res://Entities/Items/Small_chest.tscn" id="10_hqmip"]
 
 [node name="td_world1" type="Node2D"]
 
@@ -129,5 +130,8 @@ position = Vector2(-61, 22)
 
 [node name="heart_container2" parent="." instance=ExtResource("8_mb4gy")]
 position = Vector2(-66, -3)
+
+[node name="SmallChest" parent="." instance=ExtResource("10_hqmip")]
+position = Vector2(-195, -46)
 
 [editable path="change_lvl"]

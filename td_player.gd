@@ -16,10 +16,11 @@ enum STATES { IDLE = 0, DEAD, DAMAGED, ATTACKING, CHARGING}
 var inertia = Vector2()
 var look_direction = Vector2.DOWN #Vector2(0,1)
 var attack_direction = look_direction
-var animation_lock = 0.0 # Lock player while playing atttack animation
+var animation_lock = 0.0 # Lock player while playing attack animation
 var damage_lock = 0.0
 var charge_time = 2.5 
 var charge_start_time = 0.0
+
 
 var attack_sound = preload("res://Assets/Sounds/explosion.wav")
 var slash_scene = preload("res://Entities/Attacks/slash.tscn")
@@ -73,6 +74,7 @@ func charged_attack():
 
 func _ready() -> void:
 	p_HUD.show()
+	data.state = STATES.IDLE
 
 func  pickup_health(value):
 	data.health += value
@@ -85,6 +87,7 @@ func pickup_heartcontainer():
 	data.health += 20
 	data.max_health += 20
 	data.health = clamp(data.health, 0, data.max_health)
+	
 
 signal health_depleted
 
@@ -156,6 +159,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 			$Camera2D/pause_menu.show()
 			get_tree().paused = true
+			
+	if data.state == STATES.DEAD:
+		OS.alert("You died.")
+		get_tree().reload_current_scene()
 	pass
 
 

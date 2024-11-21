@@ -22,18 +22,18 @@ func open_chest(player):
 		
 func bounce_towards_player(item, player):
 	var direction = (player.global_position - global_position).normalized()
-	var BOUNCE_DISTANCE = 50.0
+	var BOUNCE_DISTANCE = 10.0
 	var bounce_path = direction * BOUNCE_DISTANCE * \
 					  Vector2(randf_range(-10,10), randf_range(-10,10))
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
-	tween.set_east(Tween.EASE_OUT)
+	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(item, "global_position", item.global_position + bounce_path, 0.5)
 	tween.play()
 	await tween.finished
 	
 func drop_item(item_name, value, player):
-	var scene_name = "res://assets/entities/items/%s.tscn" % regex.sub(item_name, "")
+	var scene_name = "res://Entities/Items/%s.tscn" % regex.sub(item_name, "")
 	var item_scene = load(scene_name)
 	var item = item_scene.instantiate()
 	item.bounce = false

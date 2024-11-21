@@ -24,10 +24,13 @@ radius = 11.2684
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35g41"]
 size = Vector2(38.7201, 10.3125)
 
-[node name="SmallChest" type="Node2D"]
+[node name="SmallChest" type="Node2D" groups=["Interactable", "chest"]]
 script = ExtResource("1_eu44k")
 contents = {
-"mini_coin": 5
+"coin": 10,
+"heart_container": 20,
+"mini_coin": 5,
+"mini_heart": 5
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -37,7 +40,7 @@ sprite_frames = SubResource("SpriteFrames_vixya")
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" groups=["Interactable", "chest"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 position = Vector2(-1, -3)
 scale = Vector2(-1.82812, 1.21678)
 shape = SubResource("CircleShape2D_vf1pv")
