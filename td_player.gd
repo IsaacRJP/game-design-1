@@ -21,11 +21,14 @@ var damage_lock = 0.0
 var charge_time = 2.5 
 var charge_start_time = 0.0
 
-
+var death_sound = preload("res://Assets/Sounds/death.wav")
+var hurt_sound = preload("res://Assets/Sounds/hitHurt.wav")
+var heartcontainer_sound = preload("res://Assets/Sounds/healthcontainersound.wav")
+var health_Sound = preload("res://Assets/Sounds/pickupHeart.wav")
+var coin_sound = preload("res://Assets/Sounds/pickupCoin (1).wav")
 var attack_sound = preload("res://Assets/Sounds/explosion.wav")
 var slash_scene = preload("res://Entities/Attacks/slash.tscn")
 var damage_shader = preload("res://Entities/Attacks/Shaders/take_damage.tres")
-# TODO: attack/preload sounds - death, hurt. minicoin/heart, charge attack
 # aud_player.stream = whatever sound
 # aud_player.play()
 
@@ -79,15 +82,19 @@ func _ready() -> void:
 func  pickup_health(value):
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
-	
+	aud_player.stream = health_Sound
+	aud_player.play()
 func pickup_money(value):
 	data.money += value
+	aud_player.stream = coin_sound
+	aud_player.play()
 
 func pickup_heartcontainer():
 	data.health += 20
 	data.max_health += 20
 	data.health = clamp(data.health, 0, data.max_health)
-	
+	aud_player.stream = heartcontainer_sound
+	aud_player.play()
 
 signal health_depleted
 
@@ -100,11 +107,12 @@ func take_damage(dmg):
 		$AnimatedSprite2D.material = damage_shader.duplicate()
 		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.55)
 		if data.health > 0:
-			#TODO: play damage sound
-			pass
+			aud_player.stream = hurt_sound
+			aud_player.play()
 		else:
 			data.state = STATES.DEAD
-			#TODO: play death animation and sound
+			aud_player.stream = death_sound
+			aud_player.play()
 		await get_tree().create_timer(0.5).timeout
 		health_depleted.emit()
 	pass
@@ -162,6 +170,7 @@ func _physics_process(delta: float) -> void:
 			
 	if data.state == STATES.DEAD:
 		OS.alert("You died.")
+		await get_tree().create_timer(1.5)
 		get_tree().reload_current_scene()
 	pass
 

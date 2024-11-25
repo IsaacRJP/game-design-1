@@ -20,11 +20,12 @@ func draw_hearts():
 	@warning_ignore("integer_division")
 	for i in range(int(player.data.max_health) / 20):
 		create_heart() # 1 heart per 20hp
+	return
 
 
 func _ready() -> void:
 	draw_hearts()
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
