@@ -21,6 +21,7 @@ tile_set = ExtResource("1_qxncj")
 
 [node name="change_lvl" parent="." instance=ExtResource("2_cyso4")]
 position = Vector2(85, -35)
+next_level = "td_world_4"
 
 [node name="CollisionShape2D" parent="change_lvl" index="0"]
 position = Vector2(2, -8)
