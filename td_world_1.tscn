@@ -107,6 +107,17 @@ position = Vector2(-32, 464)
 visible = false
 position = Vector2(100, 178)
 
+[node name="change_lvl2" parent="." instance=ExtResource("7_jfc03")]
+position = Vector2(-231, -557)
+next_level = "td_world_5"
+
+[node name="CollisionShape2D" parent="change_lvl2" index="0"]
+position = Vector2(93, 967)
+
+[node name="Sprite2D" parent="change_lvl2" index="1"]
+visible = false
+position = Vector2(100, 178)
+
 [node name="td_enemy18" parent="." instance=ExtResource("5_2gvql")]
 position = Vector2(120, 359)
 
@@ -135,3 +146,4 @@ position = Vector2(-66, -3)
 position = Vector2(-195, -46)
 
 [editable path="change_lvl"]
+[editable path="change_lvl2"]

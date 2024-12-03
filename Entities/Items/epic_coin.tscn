@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3ardl6mcb2ks"]
+
+[ext_resource type="Script" path="res://Entities/Items/epic_coin.gd" id="1_1dd3h"]
+[ext_resource type="Texture2D" uid="uid://bxgjuh0plaqaq" path="res://Assets/Sprites/gfx/objects.png" id="2_ogoo4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlgee"]
+atlas = ExtResource("2_ogoo4")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26jct"]
+atlas = ExtResource("2_ogoo4")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nogn5"]
+atlas = ExtResource("2_ogoo4")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5rbd"]
+atlas = ExtResource("2_ogoo4")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5ogi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlgee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26jct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nogn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5rbd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_usl4c"]
+radius = 9.0
+
+[node name="epic_coin" type="Node2D"]
+script = ExtResource("1_1dd3h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_f5ogi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_usl4c")

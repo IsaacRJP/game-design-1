@@ -298,6 +298,7 @@ position = Vector2(492, 385)
 
 [node name="change_lvl" parent="." instance=ExtResource("6_7hbyt")]
 position = Vector2(-30, 368)
+next_level = "td_world_5"
 
 [node name="Sprite2D" parent="change_lvl" index="1"]
 position = Vector2(1269, 812)
