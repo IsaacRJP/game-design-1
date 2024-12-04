@@ -22,7 +22,7 @@ func open_chest(player):
 		
 func bounce_towards_player(item, player):
 	var direction = (player.global_position - global_position).normalized()
-	var BOUNCE_DISTANCE = 40.0
+	var BOUNCE_DISTANCE = 30.0
 	var bounce_path = direction * BOUNCE_DISTANCE * \
 					  Vector2(randf_range(-10,10), randf_range(-10,10))
 	var tween = get_tree().create_tween()
