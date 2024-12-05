@@ -27,12 +27,17 @@ func _ready() -> void:
 	draw_hearts()
 	
 
+var omh = 0 # old max health
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var p_health = player.data.health
 	var p_money = player.data.money
 	var full_hearts = floor(p_health / 20)
 	var remainder = int(p_health) % 20
+	if player.data.max_health > omh:
+		omh = player.data.max_health
+		draw_hearts()
 	
 	for heart in hearts.get_children():
 		var index = heart.get_index()

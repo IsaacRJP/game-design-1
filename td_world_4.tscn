@@ -154,16 +154,21 @@ position = Vector2(575, 235)
 rotation = 3.14159
 
 [node name="SmallChest2" parent="." instance=ExtResource("3_0oleo")]
-position = Vector2(-106, -414)
+position = Vector2(-101, -391)
+rotation = -1.57225
+scale = Vector2(1.08144, 1.21623)
 
 [node name="SmallChest3" parent="." instance=ExtResource("3_0oleo")]
-position = Vector2(-84, -414)
+position = Vector2(-102, -371)
+rotation = -1.57534
 
 [node name="SmallChest4" parent="." instance=ExtResource("3_0oleo")]
-position = Vector2(-62, -414)
+position = Vector2(-101, -352)
+rotation = -1.57225
 
 [node name="SmallChest5" parent="." instance=ExtResource("3_0oleo")]
-position = Vector2(-41, -414)
+position = Vector2(-101, -333)
+rotation = -1.57225
 
 [node name="td_enemy" parent="." instance=ExtResource("4_y3eqr")]
 position = Vector2(23, -417)

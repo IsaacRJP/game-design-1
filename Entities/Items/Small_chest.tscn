@@ -22,7 +22,7 @@ animations = [{
 radius = 11.2684
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35g41"]
-size = Vector2(38.7201, 10.3125)
+size = Vector2(27.6572, 6.18748)
 
 [node name="SmallChest" type="Node2D" groups=["Interactable", "chest"]]
 script = ExtResource("1_eu44k")
