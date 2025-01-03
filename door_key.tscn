@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0skkmmyom5ce"]
+
+[ext_resource type="Script" path="res://door_key.gd" id="1_845w4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pu2g4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hh825"]
+
+[node name="door_key" type="Node2D"]
+script = ExtResource("1_845w4")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 3.14159
+scale = Vector2(175.02, 152114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -3.14159
+scale = Vector2(0.00627432, 6.57408e-06)
+shape = SubResource("CircleShape2D_pu2g4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(17.1681, 3.97873)
+texture = SubResource("PlaceholderTexture2D_hh825")
