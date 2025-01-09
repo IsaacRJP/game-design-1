@@ -14,10 +14,11 @@ func interact(player):
 	print("Key has been picked up by a player.")
 	remove()
 
-func _init(default_value: int = 1):
-	value = default_value
-
 func _process(delta: float) -> void:
 	for player in get_tree().get_nodes_in_group("Player"):
-		if $Area2D.overlaps_body(player):
+		if $Key.overlaps_body(player):
 			interact(player)
+		if $DoorAlert.overlaps_body(player):
+			OS.alert("YOU NEED A KEY TO OPEN THIS DOOR!")
+	if KeyObtained == true:
+		pass

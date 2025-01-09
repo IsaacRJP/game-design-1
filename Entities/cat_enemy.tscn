@@ -137,12 +137,12 @@ shape = SubResource("RectangleShape2D_t3a1k")
 debug_color = Color(0.999996, 0.243501, 0.203424, 0.419608)
 
 [node name="RayCast2DM" type="RayCast2D" parent="."]
-target_position = Vector2(-50, 0)
+target_position = Vector2(-97, 0)
 
 [node name="RayCast2DL" type="RayCast2D" parent="."]
-target_position = Vector2(-48, 24)
+target_position = Vector2(-87, 51)
 
 [node name="RayCast2DR" type="RayCast2D" parent="."]
-target_position = Vector2(-48, -24)
+target_position = Vector2(-90, -46)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

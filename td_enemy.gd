@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 70.0
-var MAX_HEALTH = 35.0
+const SPEED = 80.0
+var MAX_HEALTH = 40.0
 var HEALTH = MAX_HEALTH
 var DAMAGE = 10.0
 var AI_STATE = STATES.IDLE
@@ -41,8 +41,8 @@ var ai_timer = ai_timer_max - randi() % 5
 var damage_lock = 0.0
 var animation_lock = 0
 var knockback = 225.0
-var vision_distance = 50
-var money_value = 5.0
+var vision_distance = 70
+var money_value = 1.0
 
 signal recovered
 
@@ -75,7 +75,7 @@ func drop_coin():
 	drop_scene(coin)
 
 func drop_items():
-	var num_drops = randi() % 3 + 1
+	var num_drops = randi() % 2 + 1
 	for i in range(num_drops):
 		var rnd_drop = drops[randi() % drops.size()]
 		call_deferred(rnd_drop)

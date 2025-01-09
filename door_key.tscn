@@ -1,23 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://0skkmmyom5ce"]
+[gd_scene load_steps=7 format=3 uid="uid://0skkmmyom5ce"]
 
 [ext_resource type="Script" path="res://door_key.gd" id="1_845w4"]
+[ext_resource type="Texture2D" uid="uid://da0ggo4gekodg" path="res://Assets/Sprites/key_big.png" id="2_oxabq"]
+[ext_resource type="Texture2D" uid="uid://c88dkammnlump" path="res://Assets/Sprites/castledoors.png" id="3_j8p2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pu2g4"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hh825"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb452"]
+size = Vector2(84, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aexg0"]
+size = Vector2(55, 49)
 
 [node name="door_key" type="Node2D"]
 script = ExtResource("1_845w4")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Key" type="Area2D" parent="."]
 rotation = 3.14159
 scale = Vector2(175.02, 152114)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
 rotation = -3.14159
-scale = Vector2(0.00627432, 6.57408e-06)
+scale = Vector2(0.00627432, 1e-05)
 shape = SubResource("CircleShape2D_pu2g4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(17.1681, 3.97873)
-texture = SubResource("PlaceholderTexture2D_hh825")
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
+position = Vector2(-0.00571363, -1.68257e-11)
+rotation = -3.14159
+scale = Vector2(0.00419595, 1e-05)
+skew = 0.00220335
+texture = ExtResource("2_oxabq")
+
+[node name="DoorAlert" type="Area2D" parent="."]
+position = Vector2(114, 45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAlert"]
+position = Vector2(-23, -4)
+shape = SubResource("RectangleShape2D_pb452")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(32, 13)
+
+[node name="Door" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(51.5, 28)
+shape = SubResource("RectangleShape2D_aexg0")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(50.5, 22)
+scale = Vector2(0.328125, 0.541667)
+texture = ExtResource("3_j8p2u")
