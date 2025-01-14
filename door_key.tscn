@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c88dkammnlump" path="res://Assets/Sprites/castledoors.png" id="3_j8p2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pu2g4"]
-radius = 6.89951
+radius = 21.7035
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb452"]
 size = Vector2(81, 88)
@@ -28,7 +28,7 @@ shape = SubResource("CircleShape2D_pu2g4")
 [node name="Sprite2D" type="Sprite2D" parent="Key"]
 position = Vector2(-0.00571363, -1.68257e-11)
 rotation = -3.14159
-scale = Vector2(0.00160773, 1.79897e-06)
+scale = Vector2(0.00160773, 1e-05)
 skew = 0.00220335
 texture = ExtResource("2_oxabq")
 

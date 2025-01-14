@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://dirj6ljiy50c3"]
+[gd_scene load_steps=9 format=4 uid="uid://dirj6ljiy50c3"]
 
 [ext_resource type="PackedScene" uid="uid://duv84xcilipf0" path="res://game_player.tscn" id="1_31wrw"]
 [ext_resource type="TileSet" uid="uid://d2i1av5tf584j" path="res://level_2(2).tres" id="1_t7rjb"]
 [ext_resource type="TileSet" uid="uid://h3cqjcvcs8ha" path="res://level_2.tres" id="2_ci6u4"]
 [ext_resource type="PackedScene" uid="uid://0skkmmyom5ce" path="res://door_key.tscn" id="4_mg256"]
+[ext_resource type="PackedScene" uid="uid://bnafiv0am6cb0" path="res://Entities/cat_enemy.tscn" id="5_r8j6i"]
+[ext_resource type="PackedScene" uid="uid://dfircg5f3iv70" path="res://multiplekeywarning.tscn" id="6_wuygb"]
+[ext_resource type="PackedScene" uid="uid://c5gb0scorpjsf" path="res://change_lvl.tscn" id="7_kqy5j"]
+[ext_resource type="Texture2D" uid="uid://c88dkammnlump" path="res://Assets/Sprites/castledoors.png" id="8_47yq3"]
 
 [node name="level_3" type="Node2D"]
 
@@ -21,8 +25,8 @@ position = Vector2(-56, -414)
 [node name="door_key" parent="." instance=ExtResource("4_mg256")]
 position = Vector2(2111, 324)
 
-[node name="Sprite2D" parent="door_key/Key" index="1"]
-scale = Vector2(0.00160773, 1e-05)
+[node name="Key" parent="door_key" index="0"]
+position = Vector2(-2554, 227)
 
 [node name="CollisionShape2D" parent="door_key/DoorAlert" index="0"]
 position = Vector2(-173.5, -26)
@@ -37,17 +41,95 @@ position = Vector2(103, -33)
 position = Vector2(103, -41)
 scale = Vector2(0.953121, 0.6875)
 
+[node name="door_key5" parent="." instance=ExtResource("4_mg256")]
+position = Vector2(2111, 324)
+
+[node name="Key" parent="door_key5" index="0"]
+position = Vector2(-1171, -93)
+
+[node name="CollisionShape2D" parent="door_key5/DoorAlert" index="0"]
+position = Vector2(-173.5, -26)
+
+[node name="StaticBody2D" parent="door_key5" index="2"]
+position = Vector2(-159, -12)
+
+[node name="Door" parent="door_key5/StaticBody2D" index="0"]
+position = Vector2(103, -33)
+
+[node name="Sprite2D" parent="door_key5/StaticBody2D" index="1"]
+position = Vector2(103, -41)
+scale = Vector2(0.953121, 0.6875)
+
+[node name="door_key4" parent="." instance=ExtResource("4_mg256")]
+position = Vector2(2111, 324)
+
+[node name="Key" parent="door_key4" index="0"]
+position = Vector2(-2964, 506)
+
+[node name="CollisionShape2D" parent="door_key4/DoorAlert" index="0"]
+position = Vector2(-173.5, -26)
+
+[node name="StaticBody2D" parent="door_key4" index="2"]
+position = Vector2(-159, -12)
+
+[node name="Door" parent="door_key4/StaticBody2D" index="0"]
+position = Vector2(103, -33)
+
+[node name="Sprite2D" parent="door_key4/StaticBody2D" index="1"]
+position = Vector2(103, -41)
+scale = Vector2(0.953121, 0.6875)
+
+[node name="door_key3" parent="." instance=ExtResource("4_mg256")]
+position = Vector2(2111, 324)
+
+[node name="Key" parent="door_key3" index="0"]
+position = Vector2(-588, -623)
+
+[node name="CollisionShape2D" parent="door_key3/DoorAlert" index="0"]
+position = Vector2(-173.5, -26)
+
+[node name="StaticBody2D" parent="door_key3" index="2"]
+position = Vector2(-159, -12)
+
+[node name="Door" parent="door_key3/StaticBody2D" index="0"]
+position = Vector2(103, -33)
+
+[node name="Sprite2D" parent="door_key3/StaticBody2D" index="1"]
+position = Vector2(103, -41)
+scale = Vector2(0.953121, 0.6875)
+
+[node name="cat_enemy" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-581, -705)
+
+[node name="cat_enemy2" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-730, -820)
+
+[node name="cat_enemy3" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1546, -824)
+
+[node name="cat_enemy4" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1330, -344)
+
+[node name="cat_enemy5" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1958, -544)
+
+[node name="cat_enemy6" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1758, -644)
+
+[node name="cat_enemy7" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-838, -501)
+
+[node name="cat_enemy8" parent="door_key3" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1217, -569)
+
 [node name="door_key2" parent="." instance=ExtResource("4_mg256")]
 position = Vector2(2111, 324)
 
 [node name="Key" parent="door_key2" index="0"]
-position = Vector2(21, 15)
+position = Vector2(-842, 76)
 
 [node name="CollisionShape2D" parent="door_key2/Key" index="0"]
 position = Vector2(-0.00571364, 6.57398e-06)
-
-[node name="Sprite2D" parent="door_key2/Key" index="1"]
-scale = Vector2(0.00160773, 1e-05)
 
 [node name="CollisionShape2D" parent="door_key2/DoorAlert" index="0"]
 position = Vector2(-173.5, -26)
@@ -62,5 +144,232 @@ position = Vector2(103, -33)
 position = Vector2(103, -41)
 scale = Vector2(0.953121, 0.6875)
 
+[node name="cat_enemy" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1802, 413)
+
+[node name="cat_enemy2" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1641, 534)
+
+[node name="cat_enemy3" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1603, 196)
+
+[node name="cat_enemy4" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1482, 521)
+
+[node name="cat_enemy5" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1359, 183)
+
+[node name="cat_enemy6" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1359, 443)
+
+[node name="cat_enemy7" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1162, 503)
+
+[node name="cat_enemy8" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-898, 503)
+
+[node name="cat_enemy9" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-614, 503)
+
+[node name="cat_enemy10" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-478, 486)
+
+[node name="cat_enemy11" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-486, 409)
+
+[node name="cat_enemy12" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-624, 363)
+
+[node name="cat_enemy13" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-624, 210)
+
+[node name="cat_enemy14" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-618, 53)
+
+[node name="cat_enemy15" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-694, -38)
+
+[node name="cat_enemy16" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-739, 301)
+
+[node name="cat_enemy17" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-817, 412)
+
+[node name="cat_enemy18" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1082, 244)
+
+[node name="cat_enemy19" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-948, 356)
+
+[node name="cat_enemy20" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1175, 352)
+
+[node name="cat_enemy21" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-1194, 79)
+
+[node name="cat_enemy22" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-3, 435)
+
+[node name="cat_enemy23" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(14, 21)
+
+[node name="cat_enemy24" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(21, -128)
+
+[node name="cat_enemy25" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-35, -328)
+
+[node name="cat_enemy26" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-277, -315)
+
+[node name="cat_enemy27" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-20, -450)
+
+[node name="cat_enemy28" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-133, -532)
+
+[node name="cat_enemy29" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-133, -732)
+
+[node name="cat_enemy30" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-130, -836)
+
+[node name="cat_enemy31" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-282, -847)
+
+[node name="cat_enemy32" parent="door_key2" instance=ExtResource("5_r8j6i")]
+position = Vector2(-484, -843)
+
+[node name="cat_enemy" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-848, 765)
+
+[node name="cat_enemy2" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-848, 669)
+
+[node name="cat_enemy3" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-838, 539)
+
+[node name="cat_enemy4" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-1010, 834)
+
+[node name="cat_enemy5" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-1054, 717)
+
+[node name="cat_enemy6" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-1057, 590)
+
+[node name="cat_enemy7" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-1060, 444)
+
+[node name="cat_enemy8" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-898, 400)
+
+[node name="cat_enemy9" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-905, 301)
+
+[node name="cat_enemy10" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-638, 295)
+
+[node name="cat_enemy11" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-546, 234)
+
+[node name="cat_enemy12" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-530, 133)
+
+[node name="cat_enemy13" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-600, -197)
+
+[node name="cat_enemy14" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-498, 38)
+
+[node name="cat_enemy15" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-495, -213)
+
+[node name="cat_enemy16" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-403, 88)
+
+[node name="cat_enemy17" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-244, -197)
+
+[node name="cat_enemy18" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(127, 85)
+
+[node name="cat_enemy19" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-108, 184)
+
+[node name="cat_enemy20" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(527, 73)
+
+[node name="cat_enemy21" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-708, 574)
+
+[node name="cat_enemy22" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-651, 815)
+
+[node name="cat_enemy23" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-346, 815)
+
+[node name="cat_enemy24" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-616, 727)
+
+[node name="cat_enemy25" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(121, 800)
+
+[node name="cat_enemy26" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(19, 663)
+
+[node name="cat_enemy27" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(19, 476)
+
+[node name="cat_enemy28" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(10, 336)
+
+[node name="cat_enemy29" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-185, 287)
+
+[node name="cat_enemy30" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-291, 285)
+
+[node name="cat_enemy31" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(-432, 469)
+
+[node name="cat_enemy32" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(168, 315)
+
+[node name="cat_enemy33" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(390, 338)
+
+[node name="cat_enemy34" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(687, 315)
+
+[node name="cat_enemy35" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(818, 315)
+
+[node name="cat_enemy36" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(944, 234)
+
+[node name="cat_enemy37" parent="." instance=ExtResource("5_r8j6i")]
+position = Vector2(939, 202)
+
+[node name="multiplekeywarning" parent="." instance=ExtResource("6_wuygb")]
+position = Vector2(2119, 341)
+
+[node name="change_lvl" parent="." instance=ExtResource("7_kqy5j")]
+position = Vector2(2053, 275)
+next_level = "level_4"
+
+[node name="CollisionShape2D" parent="change_lvl" index="0"]
+position = Vector2(-23, 53.5)
+
+[node name="Sprite2D" parent="change_lvl" index="1"]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(3, -4)
+scale = Vector2(0.937501, 0.6875)
+texture = ExtResource("8_47yq3")
+
 [editable path="door_key"]
+[editable path="door_key5"]
+[editable path="door_key4"]
+[editable path="door_key3"]
 [editable path="door_key2"]
+[editable path="change_lvl"]

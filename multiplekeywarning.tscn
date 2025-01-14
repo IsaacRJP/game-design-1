@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfircg5f3iv70"]
+
+[ext_resource type="Script" path="res://multiplekeywarning.gd" id="1_2sxtu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2ps1"]
+radius = 84.1487
+
+[node name="multiplekeywarning" type="Node2D"]
+script = ExtResource("1_2sxtu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b2ps1")
