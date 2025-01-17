@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bwi1xmbmlrajr"]
+[gd_scene load_steps=7 format=4 uid="uid://bwi1xmbmlrajr"]
 
 [ext_resource type="TileSet" uid="uid://phv14gpth1a5" path="res://tilesets/td_world_1.tres" id="1_xdxj4"]
 [ext_resource type="PackedScene" uid="uid://duv84xcilipf0" path="res://game_player.tscn" id="2_rmvp4"]
 [ext_resource type="PackedScene" uid="uid://0skkmmyom5ce" path="res://door_key.tscn" id="3_8mxqg"]
 [ext_resource type="PackedScene" uid="uid://dru4ljxpmhpcw" path="res://dog_player.tscn" id="4_gfljr"]
+[ext_resource type="PackedScene" uid="uid://c5gb0scorpjsf" path="res://change_lvl.tscn" id="5_vukq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bqyk"]
 size = Vector2(150, 79)
@@ -38,7 +39,7 @@ position = Vector2(-122.25, 3)
 position = Vector2(32, 10)
 
 [node name="Door" parent="door_key/StaticBody2D" index="0"]
-position = Vector2(42.375, 34.125)
+position = Vector2(12, 37)
 
 [node name="Sprite2D" parent="door_key/StaticBody2D" index="1"]
 visible = false
@@ -57,4 +58,31 @@ offset_right = 118.0
 offset_bottom = 68.0
 text = "FIND THE DOG!"
 
+[node name="change_lvl" parent="." instance=ExtResource("5_vukq0")]
+visible = false
+position = Vector2(1346, -88)
+next_level = "level_6"
+
+[node name="door_key2" parent="." instance=ExtResource("3_8mxqg")]
+position = Vector2(1288, -53)
+
+[node name="CollisionShape2D" parent="door_key2/Key" index="0"]
+position = Vector2(-0.0342811, -0.000315553)
+
+[node name="Sprite2D" parent="door_key2/Key" index="1"]
+visible = false
+
+[node name="DoorAlert" parent="door_key2" index="1"]
+position = Vector2(217, 23)
+
+[node name="CollisionShape2D" parent="door_key2/DoorAlert" index="0"]
+position = Vector2(49, -5)
+
+[node name="Door" parent="door_key2/StaticBody2D" index="0"]
+position = Vector2(24, -21.0313)
+
+[node name="Sprite2D" parent="door_key2/StaticBody2D" index="1"]
+visible = false
+
 [editable path="door_key"]
+[editable path="door_key2"]

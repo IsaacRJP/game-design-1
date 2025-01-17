@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c88dkammnlump" path="res://Assets/Sprites/castledoors.png" id="3_j8p2u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pu2g4"]
-radius = 21.7035
+radius = 14.584
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb452"]
 size = Vector2(153.5, 51.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aexg0"]
-size = Vector2(11.25, 71.75)
+size = Vector2(79.625, 55.9375)
 
 [node name="door_key" type="Node2D"]
 script = ExtResource("1_845w4")
