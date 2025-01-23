@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt7hjovv7q3wm"]
+
+[ext_resource type="Script" path="res://end_screen.gd" id="1_vs1dh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6h5uo"]
+font_size = 100
+
+[node name="End_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vs1dh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 145.0
+offset_right = 951.0
+offset_bottom = 282.0
+text = "YOU FINISHED!"
+label_settings = SubResource("LabelSettings_6h5uo")
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 299.0
+offset_right = 938.0
+offset_bottom = 390.0
+text = "Play again"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 401.0
+offset_right = 940.0
+offset_bottom = 492.0
+text = "QUIT"
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

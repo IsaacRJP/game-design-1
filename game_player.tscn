@@ -361,7 +361,7 @@ height = 22.0
 script = ExtResource("1_0plhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
+modulate = Color(0.559546, 0.767411, 0.666291, 1)
 sprite_frames = SubResource("SpriteFrames_q04lg")
 animation = &"idle_side"
 autoplay = "idle_down"
@@ -382,6 +382,7 @@ visible = false
 stream = ExtResource("5_fnrpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.257153, 0.164268, 0.074625, 1)
 scale = Vector2(12, 12)
 texture = SubResource("PlaceholderTexture2D_ptfmt")
